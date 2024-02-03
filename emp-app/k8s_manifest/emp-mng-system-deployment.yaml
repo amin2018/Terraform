@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: emp-mng-system
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: emp-mng-system
+            tier: full-stack-app
+    template:
+        metadata:
+            labels:
+                app: emp-mng-system
+                tier: full-stack-app
+        spec:
+          containers:
+          - name: emp-mng-system
+            image: public.ecr.aws/n7n7y0b6/emp_mng_system:v1
+            imagePullPolicy: "IfNotPresent"
+            ports:
+            - name: http
+              containerPort: 8080
+            env:
+            - name: MYSQL_HOST
+              value: "jdbc:mysql://52.91.141.63:3306/learncrud"
+            - name: MYSQL_USER
+              value: "root"
+            - name: MYSQL_PWD
+              value: "root"

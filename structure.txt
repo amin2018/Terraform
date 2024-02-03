@@ -1,0 +1,68 @@
+terraform_project/
+│
+├── main.tf                # Main Terraform configuration file
+├── variables.tf           # Variable definitions for the project
+├── outputs.tf             # Output definitions for the project
+├── terraform.tfvars       # Variable values for different environments
+├── backend.tf             # Backend configuration file for state management
+├── providers.tf           # Provider configurations
+│
+├── modules/               # Directory for Terraform modules
+│   ├── vm/                # Module for Virtual Machines
+│   │   ├── main.tf        # Main file for the VM module
+│   │   ├── variables.tf   # Variable definitions for the VM module
+│   │   └── outputs.tf     # Output definitions for the VM module
+│   │
+│   ├── persistent_disk/   # Module for Persistent Disks
+│   │   ├── main.tf        # Main file for the disk module
+│   │   ├── variables.tf   # Variable definitions for the disk module
+│   │   └── outputs.tf     # Output definitions for the disk module
+│   │
+│   ├── gke/               # Module for GKE Cluster
+│   │   ├── main.tf        # Main file for the GKE module
+│   │   ├── variables.tf   # Variable definitions for the GKE module
+│   │   └── outputs.tf     # Output definitions for the GKE module
+│   │
+│   ├── k8s_deployment/    # Module for Kubernetes Deployment
+│   │   ├── main.tf        # Main file for the Kubernetes deployment module
+│   │   ├── variables.tf   # Variable definitions for the deployment module
+│   │   └── outputs.tf     # Output definitions for the deployment module
+│   │
+│   ├── k8s_service/       # Module for Kubernetes Service
+│   │   ├── main.tf        # Main file for the Kubernetes service module
+│   │   ├── variables.tf   # Variable definitions for the service module
+│   │   └── outputs.tf     # Output definitions for the service module
+│   │
+│   ├── ingress_controller/ # Module for Ingress Controller (Helm-based, NGINX)
+│   │   ├── main.tf         # Main file for the Ingress controller module
+│   │   ├── variables.tf    # Variable definitions for the Ingress controller module
+│   │   └── outputs.tf      # Output definitions for the Ingress controller module
+│   │
+│   ├── cloud_sql/         # Module for Cloud SQL
+│   │   ├── main.tf        # Main file for the Cloud SQL module
+│   │   ├── variables.tf   # Variable definitions for the Cloud SQL module
+│   │   └── outputs.tf     # Output definitions for the Cloud SQL module
+│   │
+│   └── ssl_ingress/       # Module for SSL and Ingress configuration
+│       ├── main.tf        # Main file for the SSL and Ingress module
+│       ├── variables.tf   # Variable definitions for the SSL and Ingress module
+│       └── outputs.tf     # Output definitions for the SSL and Ingress module
+│
+└── environments/          # Configurations for different environments
+    ├── dev/               # Development environment configs
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   ├── outputs.tf
+    │   └── terraform.tfvars
+    │
+    ├── test/              # Test environment configs
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   ├── outputs.tf
+    │   └── terraform.tfvars
+    │
+    └── prod/              # Production environment configs
+        ├── main.tf
+        ├── variables.tf
+        ├── outputs.tf
+        └── terraform.tfvars
